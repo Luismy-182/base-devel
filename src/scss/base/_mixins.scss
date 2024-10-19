@@ -52,3 +52,9 @@
     max-width: 120rem;
     margin: 0 auto;
 }
+
+
+@mixin img{
+    height: 30rem;
+    object-fit: cover;
+}

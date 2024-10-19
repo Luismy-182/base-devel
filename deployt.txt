@@ -1,0 +1,31 @@
+Para subir tu proyecto a Un hosting de pago y CPanel. Necesitas indicarle a tu hosting que tu proyecto arranca desde la carpeta public, para ello requieres en la raiz un archivo .htaccess que haga este redireccionamiento.
+
+.htaccess para la raíz, ejem public_html
+
+
+
+
+DirectoryIndex index.php
+RewriteEngine On
+RewriteRule ^$ public/index.php [L]
+RewriteRule ^((?!public/).*)$ public/$1 [L,NC]
+
+
+
+
+
+#Así como un .htaccess para la carpeta public con la que permitirás el funcionamiento de todas tus rutas.
+#.htaccess para /public/:
+
+
+
+<IfModule mod_negotiation.c>
+    Options -MultiViews
+</IfModule>
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^(.*)$ index.php/$1 [QSA,PT,L]
+</IfModule>

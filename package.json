@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "gulp dev"
   },
-  "author": "",
+  "author": "Miguel Angel Suarez Pluma",
   "license": "ISC",
   "devDependencies": {
     "cssnano": "^5.1.10",
